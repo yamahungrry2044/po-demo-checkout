@@ -38,9 +38,48 @@
     <h1>Power7 Demo Checkout</h1>
     <p>Practice only — no real orders or payments.</p>
 
-    <form id="demo-form">
-      <input id="customer-name"
-             placeholder="Customer name" required>
+
+<h2>Demo Products</h2>
+
+<label>
+  <input type="checkbox" name="product"
+         value="Demo Product A">
+  Demo Product A — $20 AUD
+</label>
+
+<label>
+  <input type="checkbox" name="product"
+         value="Demo Product B">
+  Demo Product B — $35 AUD
+</label>
+
+<label>
+  <input type="checkbox" name="product"
+         value="Demo Product C">
+  Demo Product C — $50 AUD
+</label>
+
+<h2>Practice Checkout</h2>
+
+<form id="demo-form">
+  <input
+    id="customer-name"
+    placeholder="Customer name"
+    required
+  >
+
+  <input
+    id="customer-email"
+    type="email"
+    placeholder="Email"
+    required
+  >
+
+  <button type="submit">
+    Submit Demo Order
+  </button>
+</form>
+
 
       <input id="customer-email" type="email"
              placeholder="Email" required>
