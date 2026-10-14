@@ -135,5 +135,38 @@
       }
     });
   </script>
+const demoPrices = {
+  "Demo Product A": 20,
+  "Demo Product B": 35,
+  "Demo Product C": 50
+};
+
+const productCheckboxes =
+  document.querySelectorAll('input[name="product"]');
+
+function updateOrderSummary() {
+  const selected = [...productCheckboxes]
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.value);
+
+  const total = selected.reduce(
+    (sum, name) => sum + demoPrices[name],
+    0
+  );
+
+  document.getElementById("selected-products").textContent =
+    selected.length
+      ? selected.join(", ")
+      : "No products selected";
+
+  document.getElementById("order-total").textContent =
+    total.toFixed(2);
+}
+
+productCheckboxes.forEach(checkbox => {
+  checkbox.addEventListener("change", updateOrderSummary);
+});
+
+updateOrderSummary();
 </body>
 </html>
